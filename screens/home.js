@@ -1,28 +1,12 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
-import { create } from 'react-native/types_generated/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload';
 
-export default function App() {
+export default function home({navigation}) {
+
   const [pesquisa, setPesquisa] = useState('');
-function handleLinksUteis(){
-  alert('Abrir tela de links úteis');
+
 }
-import home from './screens/home'
-import secretaria from './screens/secretaria'
-
-const Stack = createNativeStackNavigator();
-
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name='secretaria' component={secretaria}/>
-        </Stack.Navigator>
-    </NavigationContainer>
-
-
     <View style={styles.container}>
 
       <View style={styles.header}>
@@ -52,7 +36,7 @@ const Stack = createNativeStackNavigator();
       <View style={styles.areaBotoes}>
 
         <Pressable style={styles.botao}
-          onPress={handleLinksUteis}>
+          Press={()=>navigation.navigate('calendario')}>
           <Text style={styles.textoBotao}>CALENDÁRIO</Text>
         </Pressable>
 
