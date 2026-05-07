@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
 
-export default function home({navigation}) {
+export default function Home({navigation}) {
 
   const [pesquisa, setPesquisa] = useState('');
+  
+  function handleLinksUteis() {
+    alert('Abrir tela de links úteis');
+  }
 
-}
   return (
     <View style={styles.container}>
 
       <View style={styles.header}>
         <Image 
-          source={require('./assets/image.png')} 
+          source={require('../assets/image.png')} 
           style={styles.logo} 
         />
       </View>
@@ -36,19 +39,17 @@ export default function home({navigation}) {
       <View style={styles.areaBotoes}>
 
         <Pressable style={styles.botao}
-          Press={()=>navigation.navigate('calendario')}>
+          onPress={() => navigation.navigate('calendario')}>
           <Text style={styles.textoBotao}>CALENDÁRIO</Text>
         </Pressable>
 
         <Pressable style={styles.botao}
-        onPress={handleLinksUteis}>
-
-        <Text style={styles.textoBotao}>SECRETARIA</Text>
+          onPress={() => navigation.navigate('Secretaria')}>
+          <Text style={styles.textoBotao}>SECRETARIA</Text>
         </Pressable>
 
         <Pressable style={styles.botao}
-        onPress={handleLinksUteis}>
-
+          onPress={handleLinksUteis}>
           <Text style={styles.textoBotao}>PORTAL</Text>
         </Pressable>
 
