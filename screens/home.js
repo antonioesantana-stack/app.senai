@@ -49,7 +49,7 @@ export default function Home({navigation}) {
         </Pressable>
 
         <Pressable style={styles.botao}
-          onPress={handleLinksUteis}>
+          onPress={() => navigation.navigate('Links')}>
           <Text style={styles.textoBotao}>PORTAL</Text>
         </Pressable>
 
@@ -59,13 +59,12 @@ export default function Home({navigation}) {
   );
 }
 
-// Estilos do aplicativo
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    paddingTop: 60, // Dá um respiro no topo da tela
+    paddingTop: 60,
   },
   header: {
     marginBottom: 40,
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
   },
   areaPesquisa: {
     flexDirection: 'row',
-    backgroundColor: '#F3E5F5', // Lilás bem clarinho
+    backgroundColor: '#F3E5F5', 
     width: '85%',
     height: 50,
     borderRadius: 8,
@@ -90,11 +89,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   inputPesquisa: {
-    flex: 1, // Faz o input ocupar o espaço que sobrar
+    flex: 1, 
     fontSize: 16,
   },
   botaoMais: {
-    backgroundColor: '#E1BEE7', // Roxo claro
+    backgroundColor: '#E1BEE7', 
     width: 35,
     height: 35,
     borderRadius: 8,
@@ -113,11 +112,11 @@ const styles = StyleSheet.create({
   areaBotoes: {
     width: '100%',
     alignItems: 'center',
-    gap: 25, // Espaço entre os botões
+    gap: 25, 
   },
   botao: {
-    flexDirection: 'row', // Coloca ícone e texto lado a lado
-    backgroundColor: '#0014CC', // Azul escuro padrão
+    flexDirection: 'row', 
+    backgroundColor: '#0014CC', 
     width: '80%',
     paddingVertical: 15,
     paddingHorizontal: 20,
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   textoBotao: {
-    color: '#fff', // Letra branca
+    color: '#fff', 
     fontSize: 16,
     fontWeight: 'bold',
   },
